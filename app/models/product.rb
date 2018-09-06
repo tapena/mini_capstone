@@ -1,9 +1,13 @@
 class Product < ApplicationRecord
-#Create a model method called `is_discounted?` that returns true if an item is under $2 and false otherwise.
+validates :name, presence: true
+validates :name, uniqueness: true
+validates :description, presence: true
+validates :description, length: { minimum: 20 }
+validates :description, length: { maximum: 200 }
+validates :image_url, uniqueness: true
+validates :price, presence: true
+validates :price, numericality: { greater_than: 0 }
 
-#Create a model method called `tax` which will return the tax that would be charged for a particular product. (Assume a 9% tax rate.)
-
-#Create a model method called `total` which will return the sum of the price + tax
   def is_discounted?
     price < 2 
   end  
