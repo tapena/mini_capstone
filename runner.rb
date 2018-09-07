@@ -1,5 +1,5 @@
-require 'http'
+#require 'http'
 
-HTTP.get("http://localhost:3000/api/products")
+#HTTP.get("http://localhost:3000/api/products")
 
-p response.parse
+#p response.parse

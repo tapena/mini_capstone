@@ -8,12 +8,16 @@ validates :image_url, uniqueness: true
 validates :price, presence: true
 validates :price, numericality: { greater_than: 0 }
 
+def supplier
+  Suplier.find_by(id: supplier_id) 
+end
+
   def is_discounted?
     price < 2 
   end  
 
   def tax
-    price * 0.09
+   price * 0.09
   end  
 
   def total
