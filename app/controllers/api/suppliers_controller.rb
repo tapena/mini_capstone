@@ -1,2 +1,2 @@
-class Api::SuppliersController < ApplicationController
-end
+#class Api::SuppliersController < ApplicationController
+#end
