@@ -1,24 +1,31 @@
 class Api::ProductsController < ApplicationController
+before_action :authenticate_admin, except: [:index, :show]
   
   def index
-    @products = Product.all
+    sort_attribute = params[:sort]
+    sort_order = params[:sort_order]
+    sort_order = params[:sort_order]
+
+    @product = Product.all
     search_term = params[:search]
+
+    @products = Product.all
+
+    category_name = params[:category]
+    if category_name
+      category = Category.find_by(name: category_name)
+      @products = @products.category
+    end  
+
     if search_term
       @products = @products.where(
                               "name iLIKE ? OR image_url iLIKE ?", 
                               "%#{search_term}%", 
                               "%#{search_term}%"
                               )
-  end
-  
-    sort_attribute = params[:sort]
-    sort_order = params[:sort_order]
-  if sort_attribute && sort_order
-    @products = @products.order(sort_attribute => sort_order)
-  elsif sort_attribute
-    @products = @products.order(sort_attribute)
-  end
-    render 'index.json.jbuilder'
+    elsif
+      render 'index.json.jbuilder'
+    end  
   end
 
   def create

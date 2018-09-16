@@ -10,14 +10,13 @@ class Order < ApplicationRecord
     self.tax = subtotal * 0.09
   end
 
-  def calcaulate_total
+  def calculate_total
     self.total = subtotal + tax
   end
 
   def build_totals
     calculate_subtotal
     calculate_tax
-    calcaulate_total
-  end  
-
+    calculate_total
+  end
 end

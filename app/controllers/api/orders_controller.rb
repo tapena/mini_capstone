@@ -23,3 +23,5 @@ before_action :authentication_user, only: [:index, :create]
     render "show.json.jbuilder"
   end
 end
+
+
