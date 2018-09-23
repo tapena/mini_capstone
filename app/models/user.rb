@@ -4,4 +4,9 @@ class User < ApplicationRecord
 
   has_many :orders
   has_many :carted_product
+
+  def cart
+    carted_products.where(status: "carted")
+  end  
+  
 end

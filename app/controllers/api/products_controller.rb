@@ -19,10 +19,10 @@ before_action :authenticate_admin, except: [:index, :show]
 
     if search_term
       @products = @products.where(
-                              "name iLIKE ? OR image_url iLIKE ?", 
-                              "%#{search_term}%", 
-                              "%#{search_term}%"
-                              )
+                                  "name iLIKE ? OR image_url iLIKE ?", 
+                                  "%#{search_term}%", 
+                                  "%#{search_term}%"
+                                  )
     elsif
       render 'index.json.jbuilder'
     end  

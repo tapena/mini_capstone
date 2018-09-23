@@ -29,8 +29,8 @@ protect_from_forgery with: :null_session
 
 
   def authenticate_user
-    unless current_user && current_user.authenticate_admin
-    render json: {}, status: :unathorized
+    unless current_user
+      render json: {}, status: :unauthorized
     end
   end
 end

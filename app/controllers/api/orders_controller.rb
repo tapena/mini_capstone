@@ -1,6 +1,6 @@
 class Api::OrdersController < ApplicationController
 
-before_action :authentication_user, only: [:index, :create]
+before_action :authenticate_user
 
   def index
     @order = current_user.orders
@@ -9,19 +9,26 @@ before_action :authentication_user, only: [:index, :create]
 
   
   def create
-    
-    @order = Order.new(
-                      user_id: current_user.id,
-                      product_id: params[:product_id],
-                      quantity: params[:quantity],
-                      )
-  
-    @order.build_totals
-    @order.calculate_total
+    carted_products = current_user.cart
+    @order = Order.new(user_id: current_user.id)
 
+    subtotal = 0
+    carted_products.each do |carted_product|
+      subtotal += carted_product.quantity = carted_product.product.price
+      product.price
+    end  
+
+    tax = subtotal * 0.09
+    total = subtotal + tax
+
+  
     @order.save
-    render "show.json.jbuilder"
-  end
+
+    carted_products.updated.all[status: "purchased", order_id: @order.id]
+     
+     render 'show.json.jbuilder'
+   end 
+   
 end
 
 
