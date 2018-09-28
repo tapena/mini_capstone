@@ -21,11 +21,11 @@ protect_from_forgery with: :null_session
   helper_method :current_user
 
 
-    def authenticate_admin
-      unless current_user && current_user.authenticate_admin
-        render json: {}, status: :unathorized
-      end
+  def authenticate_admin
+    unless current_user && current_user.authenticate_admin
+      render json: {}, status: :unathorized
     end
+  end
 
 
   def authenticate_user
