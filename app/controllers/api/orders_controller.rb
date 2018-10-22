@@ -1,4 +1,4 @@
-class Api::OrdersController < ApplicationController
+pclass Api::OrdersController < ApplicationController
 
 before_action :authenticate_user
 
