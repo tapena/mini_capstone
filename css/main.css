@@ -1,22 +1,3 @@
-body {
-  background-image: url('creampaper_@2X.png');
-  font-family: "Book Antiqua",Palatino,"Palatino Linotype","Palatino LT STD",Georgia,serif
-}
-
-.cardspacing {
-  
-}
-
-/* Basics logIn */
-html, body {   
- width: 100%;   
-height: 100%;   
-font-family: "Helvetica Neue", Helvetica, sans-serif;   
-color: #444;   
--webkit-font-smoothing: antialiased;    background: #f0f0f0;
-}
-
-
 /* DEFAULT 2.0 - 2014-2016 copyright (c) templatesuper.com | @templatesuper */
 html {
   overflow-x: hidden;

@@ -11,9 +11,21 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Show</h1>
+    <style type="main.css"></style>
+    <h1>Log In</h1>
       
-
+      <div id="container">       
+        <form>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password">
+            <div id="lower">
+            <input type="checkbox"><label for="checkbox">Keep me logged in</label>
+            <input type="submit" value="Login">
+            </div>
+        </form>
+      </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -22,3 +34,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
+

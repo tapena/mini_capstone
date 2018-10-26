@@ -8,7 +8,7 @@ class Product < ApplicationRecord
   has_many :categories, through: :product_categories
   
 validates :name, presence: true
-validates :name, uniqueness: truej
+validates :name, uniqueness: true
 validates :description, presence: true
 validates :description, length: { minimum: 20 }
 validates :description, length: { maximum: 200 }
